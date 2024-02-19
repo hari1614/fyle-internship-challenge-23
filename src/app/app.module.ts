@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { PaginateComponent } from './components/Paginate/Paginate.component';
 import { FormsModule } from '@angular/forms';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
