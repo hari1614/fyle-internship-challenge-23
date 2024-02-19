@@ -1,5 +1,40 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
+  <div class="search-repo">
+    <input id="search-input" [(ngModel)]="searchProfile" placeholder="Ex: johnpapa " />
+    <button id="search-btn" (click)="search()">Search</button>
   </div>
-</div>
+  <div class="main-profile">
+    <div class="avatar-div">
+      <div class="avatar">
+        <img [src]="profile.avatar_url" alt="user">
+      </div>
+      <div class="profile-link">
+        <a [href]="profile.url">{{profile.url}}</a>
+      </div>
+    </div>
+    <div class="profile-content">
+      <h1>{{profile.name}}</h1>
+      <p>{{profile.bio}}</p>
+      <div>
+       
+          <i class='fas fa-map-marker-alt'></i>
+        
+        <a [href]="profile.location">{{profile.location}}</a>
+      </div>
+      <div>
+        <a [href]="'https://twitter.com/'+profile.twitter_username">{{'Twitter: https://twitter.com/'+profile.twitter_username}}</a>
+      </div>
+    </div>
+    <!-- Fyle Internship Challenge -->
+  </div>
+  <div class="main-repo">
+    <div class="repo" *ngFor="let repo of repositories">
+      <div class="title">{{repo.name}}</div>
+      <div class="description">{{repo.description}}</div>
+      <div class="topics">
+        <span *ngFor="let topic of repo.topics">
+          {{topic}}
+        </span>
+      </div>
+    </div>
+  </div>
+  <app-paginate [total]="100" [current]="current" [perPage]="perPage" (pageChange)="currentPage($event)"></app-paginate>

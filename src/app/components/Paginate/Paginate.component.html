@@ -1,0 +1,8 @@
+<div class="paginate-div">
+    <!-- prev page -->
+    <span *ngIf="current != 1" (click)="pageAction('prev')">Prev</span>
+    <!-- page 1 to n loop -->
+    <span *ngFor="let page of pages; index as i" [class]="current == i + 1? 'active': ''" (click)="pageAction(i+1)">{{page}}</span>
+    <!-- next page -->
+    <span *ngIf="current != total / perPage" (click)="pageAction('next')">Next</span>
+</div>

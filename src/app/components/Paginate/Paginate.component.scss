@@ -1,0 +1,15 @@
+.paginate-div{
+    margin-top: 20px;
+    padding: 0px 20px;
+    text-align: center;
+    span{
+        margin: 5px 0px;
+        padding: 5px 10px;
+        border: 1px solid;
+        cursor: pointer;
+        display: inline-block;
+    }
+    span.active{
+        background: grey;
+    }
+}
