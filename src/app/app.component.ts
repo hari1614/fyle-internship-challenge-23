@@ -15,7 +15,9 @@ export class AppComponent {
   total: Number = 100;
   constructor(
     private apiService: ApiService
-  ) {}
+  ) {
+    this.getProfile()
+  }
 
   search(){
     this.getProfile()
